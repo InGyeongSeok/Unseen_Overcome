@@ -177,7 +177,6 @@ TEXT("/Script/EnhancedInput.InputAction'/Game/Input/Actions/IA_OV_Resume.IA_OV_R
 	
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MuzzleEffectRef(
 TEXT("/Script/Niagara.NiagaraSystem'/Game/Vefects/Shots_VFX/VFX/MuzzleFlash/Looped/FX_MuzzleFlash_Rifle_Custom.FX_MuzzleFlash_Rifle_Custom'"));
-
 	if (MuzzleEffectRef.Succeeded())
 	{
 		MuzzleEffect = MuzzleEffectRef.Object;
@@ -282,9 +281,7 @@ void AOVCharacterPlayer::SmoothInterpReturn(float Value)
 	CameraBoom->TargetArmLength = (FMath::Lerp(300, 150, Value));
 }
 
-void AOVCharacterPlayer::SmoothOnFinish()
-{
-}
+
 
 
 void AOVCharacterPlayer::ChangeCharacterControl()
@@ -640,9 +637,6 @@ void AOVCharacterPlayer::ServerRPCShoot_Implementation()
 
 void AOVCharacterPlayer::SetDead()
 {
-	//Super::SetDead();
-	// GetMesh()->SetSimulatePhysics(true);
-	// GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics); //랙돌 만들기
 	APlayerController* PlayerController = Cast<APlayerController>(GetController());
 	if(HUDWidget->DeadWidget)
 	{
@@ -652,7 +646,6 @@ void AOVCharacterPlayer::SetDead()
 	{
 		DisableInput(PlayerController);
 	}
-	//UE_LOG(LogTemp,Warning ,TEXT("Character Dead"));
 }
 
 void AOVCharacterPlayer::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const

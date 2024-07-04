@@ -72,8 +72,7 @@ public:
 	FOnTimelineEvent SmoothTimelineFinish; // (2)
 	UFUNCTION()
 	void SmoothInterpReturn(float Value); // (3)
-	UFUNCTION()
-	void SmoothOnFinish(); // (4)
+
 	UPROPERTY()
 	UTimelineComponent* SmoothCurveTimeline; // (5)
 	UPROPERTY(EditAnywhere, Category = "Timeline")
