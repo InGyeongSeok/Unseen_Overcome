@@ -66,22 +66,23 @@ protected:
 	virtual void BeginPlay() override;
 public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
+	
 	//Timeline Section
-	FOnTimelineFloat SmoothInterpFunction; // (1)
-	FOnTimelineEvent SmoothTimelineFinish; // (2)
+	FOnTimelineFloat SmoothInterpFunction; 
+	
 	UFUNCTION()
-	void SmoothInterpReturn(float Value); // (3)
+	void SmoothInterpReturn(float Value); 
 
 	UPROPERTY()
-	UTimelineComponent* SmoothCurveTimeline; // (5)
+	UTimelineComponent* SmoothCurveTimeline; 
+	
 	UPROPERTY(EditAnywhere, Category = "Timeline")
-	UCurveFloat* SmoothCurveFloat; // (6)
+	UCurveFloat* SmoothCurveFloat; 
 
+
+	
 	void ItemUse(UOVItemBase* ItemToUse, const int32 QuantityToUse);
-
-
-
+	
 	// Character Control Section
 protected:
 	void ChangeCharacterControl(); //V키 눌러서 컨트롤러 바꿨을 때 구현하는 함수
@@ -93,6 +94,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, Meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class USpringArmComponent> CameraBoom;
 
+	UPROPERTY()
+	float TargetArmLength;
+	
+	UPROPERTY()
+	float AimLength;
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, Meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UCameraComponent> FollowCamera;
 

@@ -9,11 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="18d6e7f6-fd27-49b4-b72a-a28b2aed8a6d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Overcome/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Overcome/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BP_Gun.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BP_Gun.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/CT_Camera.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/CT_Camera.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprint/Character/BP_OVCharacterPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Character/BP_OVCharacterPlayer.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Overcome/Character/OVCharacterPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Overcome/Character/OVCharacterPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Overcome/Character/OVCharacterPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Overcome/Character/OVCharacterPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Overcome/Component/OVCharacterStatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Overcome/Component/OVCharacterStatComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,6 +221,7 @@
       <workItem from="1719804914382" duration="1442000" />
       <workItem from="1719998181164" duration="179000" />
       <workItem from="1720081510968" duration="6546000" />
+      <workItem from="1720140149928" duration="2554000" />
     </task>
     <servers />
   </component>

@@ -41,7 +41,10 @@ AOVCharacterPlayer::AOVCharacterPlayer()
 	//Camera
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 300.0f;
+	TargetArmLength = 300;
+	AimLength = 150;
+	CameraBoom->TargetArmLength = TargetArmLength;
+	
 	CameraBoom->bUsePawnControlRotation = true;
 	CameraBoom->SocketOffset = FVector(0.0, 60.0, 60.0);
 	CameraBoom->bEnableCameraLag = false;
@@ -188,8 +191,9 @@ TEXT("/Script/Niagara.NiagaraSystem'/Game/Vefects/Shots_VFX/VFX/MuzzleFlash/Loop
 	//Timeline
 	SmoothCurveTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("TimelineFront"));
 	SmoothInterpFunction.BindUFunction(this, FName("SmoothInterpReturn"));
-	SmoothTimelineFinish.BindUFunction(this, FName("SmoothOnFinish"));
 
+
+	
 	//Gun
 	Gun = CreateDefaultSubobject<AOVGun>(TEXT("Gun"));
 	bIsGun = true;
@@ -245,9 +249,9 @@ void AOVCharacterPlayer::BeginPlay()
 	if (SmoothCurveFloat)
 	{
 		SmoothCurveTimeline->AddInterpFloat(SmoothCurveFloat, SmoothInterpFunction);
-		SmoothCurveTimeline->SetTimelineFinishedFunc(SmoothTimelineFinish);
 		SmoothCurveTimeline->SetLooping(false);
 	}
+	
 	SetCharacterControl(CurrentCharacterControlType);
 }
 
@@ -278,10 +282,8 @@ void AOVCharacterPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 
 void AOVCharacterPlayer::SmoothInterpReturn(float Value)
 {
-	CameraBoom->TargetArmLength = (FMath::Lerp(300, 150, Value));
+	CameraBoom->TargetArmLength = (FMath::Lerp(TargetArmLength, AimLength, Value));
 }
-
-
 
 
 void AOVCharacterPlayer::ChangeCharacterControl()
